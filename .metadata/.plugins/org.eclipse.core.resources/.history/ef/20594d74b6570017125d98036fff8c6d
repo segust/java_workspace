@@ -1,0 +1,69 @@
+package util;
+
+import java.io.*;
+import java.util.ArrayList;
+
+
+public class CreatTXT {
+	
+	public void createFile(File fileName) throws Exception {
+		try {
+			if (!fileName.exists()) {
+				fileName.createNewFile();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	public void writeTxtFile(String Coordinates){
+
+		ArrayList<String> Marks = new ArrayList<String>();
+		String[] Coordinate = Coordinates.split("/n");
+		for(int i=0;i<Coordinate.length;i++) {
+			if(i!=Coordinate.length){
+			String Coor=Coordinate[i];
+			String[] c=Coor.split(",");
+			String lat=c[0];
+			String lng=c[1];
+			Marks.add("new BMap.Point("+lat+","+lng+"),");
+			}else{
+				String Coor=Coordinate[i];
+				String[] c=Coor.split(",");
+				String lat=c[0];
+				String lng=c[1];
+				Marks.add("new BMap.Point("+lat+","+lng+")");
+				}
+		}
+		String[] string = new String[Marks.size()];
+		for (int i = 0; i < Marks.size(); i++) {
+			string[i] = Marks.get(i);
+		}
+
+		try {
+			BufferedWriter output = new BufferedWriter(new FileWriter("CoorMarksMap.txt"));
+			output.write("<html>"+"<head>"+"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>"+"<title>CoorMarksMap</title>"
+					+"<script type=\"text/javascript\" src=\"http://api.map.baidu.com/api?v=1.2\"></script>"+"</head>"+"<body>"+"<div style=\"width:1920px;height:1080px;border:1px solid gray\" id=\"container\"></div>"
+					+"</body>"+"</html>"+"<script type=\"text/javascript\">"+"var map=new BMap.Map(\"container\");"+"var points=[\n");
+			for (int i = 0; i < string.length-1; i++) {
+				output.write(String.valueOf(string[i]) + "\n");
+			}
+			output.write(String.valueOf(string[string.length-1]));
+			output.write("];");
+			for(int i=0;i<string.length;i++){
+				output.write("var marker"+i+"=new BMap.Marker(points["+i+"]);\n");
+			}
+			for (int i=0;i<string.length;i++){
+				output.write("map.adOverlay(marker"+i+");\n");
+			}
+			output.write("map.centerAndZoom(points[6], 16);\n");
+			output.write("map.addControl(new BMap.NavigationControl());\n");
+			output.write("marker7.addEventListener(\"click\",function(){\nmap.setViewport(points);\n});\n</script>");
+			output.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

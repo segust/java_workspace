@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: root
+Build-Jdk: 1.7.0_111
+Created-By: Apache Maven 3.3.9
+Main-Class: org.apache.hadoop.examples.ExampleDriver
+Archiver-Version: Plexus Archiver
+
