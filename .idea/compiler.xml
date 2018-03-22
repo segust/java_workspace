@@ -9,8 +9,9 @@
         <module name="cqupt.sichuang.info_collection4" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="cqupt.sichuang.info_collection4" target="1.5" />
+      <module name="Workspace1" target="" />
     </bytecodeTargetLevel>
   </component>
 </project>

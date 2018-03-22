@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="将包“hadoop”复制到“hdfs/src/main/java”&#x0A;－ 原始项目：“hadoop”&#x0A;－ 目标元素：“hdfs/src/main/java”&#x0A;－ 原始元素：“hadoop/src/hadoop”" description="复制包" destination="=hdfs/src\/main\/java" element1="/src&lt;hadoop" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1503318067741" version="1.0"/>
-</session>

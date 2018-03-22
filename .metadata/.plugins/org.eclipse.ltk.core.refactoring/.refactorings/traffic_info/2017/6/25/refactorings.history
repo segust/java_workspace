@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;passport_info_bdMap.getCode&apos; to &apos;MapMarks&apos;&#x0D;&#x0A;- Original project: &apos;traffic_info&apos;&#x0D;&#x0A;- Original element: &apos;passport_info_bdMap.getCode&apos;&#x0D;&#x0A;- Renamed element: &apos;passport_info_bdMap.MapMarks&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;getCode&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;passport_info_bdMap{getCode.java[getCode" matchStrategy="1" name="MapMarks" qualified="false" references="true" similarDeclarations="false" stamp="1498133682752" textual="false" version="1.0"/>
-</session>
